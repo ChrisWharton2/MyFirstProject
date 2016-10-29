@@ -1,0 +1,6 @@
+- name: Play This
+  hosts: all
+  tasks:
+    -name: Message
+     debug:
+       msg: "Now Play This"
