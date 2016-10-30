@@ -8,7 +8,7 @@
   - unarchive: src=./dpkg-licenses-master.zip dest=~/ansible 
   - name: Run dpkg license master
     shell: ./ansible/dpkg-licenses-master/dpkg-licenses >/tmp/licenses.txt 
-  - fetch: src=/tmp/licenses.txt dest=~/licenses-{{ inventory_hostname }} flat=yes
+  - fetch: src=/tmp/licenses.txt dest=/tmp/licenses-{{ inventory_hostname }} flat=yes
 ...
 
 
