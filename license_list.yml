@@ -5,10 +5,11 @@
   tasks:
   - name: dpkg license master
     file: path=~/ansible state=directory
+    file: path=/tmp/license_fetch state=directory mode=660
   - unarchive: src=./dpkg-licenses-master.zip dest=~/ansible 
   - name: Run dpkg license master
     shell: ./ansible/dpkg-licenses-master/dpkg-licenses >/tmp/licenses.txt 
-  - fetch: src=/tmp/licenses.txt dest=/tmp/licence_fetch/licenses-{{ inventory_hostname }} flat=yes
+  - fetch: src=/tmp/licenses.txt dest=/tmp/license_fetch/licenses-{{ inventory_hostname }} flat=yes
 ...
 
 
